@@ -1,0 +1,54 @@
+server:
+  port: 9090
+
+#debug: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    disable-swagger-default-url: true
+
+
+customer-management:
+  getAll: /customers/getAll
+  findByIds: /customers
+  findById: /customers/{id}
+  addCustomer: /customers
+  updateCustomer: /customers
+  deleteCustomer: /customers/{id}
+  error: /error
+
+partition-ids:
+  size: 5
+
+uri.prefix:
+  customer: /customers
+
+spring:
+  application:
+    name: customer-management
+  datasource:
+    username: kishore
+    password: mysql
+    jdbc-url: jdbc:mysql://localhost:3307/customerdb
+    platform:
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    show_sql: true
+    properties:
+      hibernate:
+        ddl-auto: update
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        default_schema:
+        session:
+          events:
+            log:
+              LOG_QUERIES_SLOWER_THAN_MS: 100
+item:
+  datasource:
+    username: kishore
+    password: mysql
+    jdbc-url: jdbc:mysql://localhost:3308/itemdb
+    platform:
+    driverClassName: com.mysql.cj.jdbc.Driver

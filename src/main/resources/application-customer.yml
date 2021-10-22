@@ -1,0 +1,20 @@
+#mysql connection details
+spring:
+  datasource:
+    username: kishore
+    password: mysql
+    url: jdbc:mysql://localhost:3307/customerdb
+    platform:
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    show_sql: true
+    properties:
+      hibernate:
+        ddl-auto: update
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        default_schema:
+        session:
+          events:
+            log:
+              LOG_QUERIES_SLOWER_THAN_MS: 100
